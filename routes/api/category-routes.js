@@ -12,7 +12,6 @@ router.get("/", (req, res) => {
   }).then((categories) => {
     res.json(categories);
   });
-
 });
 
 
