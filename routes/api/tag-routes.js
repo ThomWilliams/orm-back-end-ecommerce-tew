@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   // be sure to include its associated Product data
   console.log("get all Tags");
   Tag.findAll({
-    include: [Product, ProductTag],
+    include: [Product],
   }).then((tags) => {
     res.json(tags);
   });
@@ -24,15 +24,16 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-    include: [Product, ProductTag],
+    include: [Product],
   }).then((tag) => {
     res.json(tag);
   }).catch((err) => res.json(err));
 
 });
 
-router.post('/', (req, res) => {
   // create a new tag
+router.post('/', (req, res) => {
+  console.log(req.body);
   console.log("create new tag");
   Tag.create({
     tag_name: req.body.tag_name,
@@ -42,16 +43,17 @@ router.post('/', (req, res) => {
   }).catch((err) => res.json(err));
 });
 
+ // update a tag's name by its `id` value
 router.put('/:id', (req, res) => {
-  // update a tag's name by its `id` value
+ 
+  console.log("update tag", req.params.id, req.body);
 
-  console.log("update tag");
-
-  Tag.update ({ 
+  Tag.update(req.body, { 
     where: {
       id: req.params.id,
     },
-  }).then((updatedTag) => {
+  })
+  .then((updatedTag) => {
     res.json(updatedTag);
   })  
   .catch((err) => res.json(err));
