@@ -1,4 +1,4 @@
-# Orm Back End Ecommerce Application
+# ORM Back End Ecommerce Application
 
 
 ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -21,13 +21,10 @@ Database name, MySQL username, and MySQL password are inputted in an environment
 
 Schema and seed commands allow for a development database to be created and seeded with test data. 
 
-The Node server.js command to invoke the application
-THEN my server is started and the Sequelize models are synced to the MySQL database
-WHEN I open API GET routes in Insomnia Core for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
-THEN I am able to successfully create, update, and delete data in my database
-```
+The Node server.js command to invokes the application, starts the server on port 3001 and syncs the Sequelize models to the MySQL database. 
+
+All routes have been tested in Insomnia Core and a demonstration video supplied illustrates the functioning actions of GET, POST, PUT and DELETE via the API. with the data for these routes in a formatted JSON. These requests respectively show how the user can successfully request, create, update, and delete data in the database.
+
 
 
 
@@ -35,18 +32,19 @@ THEN I am able to successfully create, update, and delete data in my database
   
 To install the project please use the following package manager: 
   
-enter 'npm init' in the terminal 
+enter 'npm init' in the terminal. 
 
-enter 'npm install mysql' to install the express dev dependency
-
-enter 'npm install table.console' to install the table.console dev dependency
-
-enter 'npm install inquirer' to install the inquirer dev dependency
+Please ensure dev dependencies dotenv, express, mysql2 and sequelize are all installed (npm install {package}.
 
   
 ## Usage
   
-Download, install NPM packages, enter node server.js to activate server and run the app
+Download, install NPM packages, enter node server.js to invoke server and run the app.
+
+Enter pasword and user details in the .env file.
+
+please run 'npm run seed' to seed the data from the 'ecommerce_db' database. 
+
 
 
 ## Contributing
@@ -57,7 +55,9 @@ n/a
   
 ## Tests
   
-n/a 
+Insomnia Core has been used to validate the routes and actions of PUT, POST, CREATE, DELETE. 
+
+Please see accompanying video for validation. 
   
 ## Questions
   
@@ -68,19 +68,25 @@ Or for direct enquiries please email the follower developer address:
 thomwilliams1990@gmail.com 
   
 
-## Screenshot
+## Screenshots
 
-![Screenshot of requests in the command line](./Assets/employee-tracker.png)
+![Screenshot of GET Category data request in the command line](./Assets/Get_Categories.png)
+
+![Screenshot of GET Product data request in the command line](./Assets/Get_Products.png)
+
+![Screenshot of GET Tags data request in the command line](./Assets/Get_Tags.png)
 
 ## Walkthrough Video
 
-- [Watch Video](https://drive.google.com/file/d/1XZ8hIfcwywpOyK1Msj6XpY0rqC4S1EgC/view?usp=sharing)
+The following walkthrough video demonstrates, 
+
+- [Watch Video](https://drive.google.com/file/d/1L_58FHnRaA0GuCR7qEstFiSt8aOUa-0n/view?usp=sharing)
 
 ## Deployment / Links
 
-- Project Repository: [GitHub](https://github.com/ThomWilliams/employee-tracker-tew)
+- Project Repository: [GitHub](https://github.com/ThomWilliams/orm-back-end-ecommerce-tew.git)
 
-- Issue tracker: [GitHub Issues](https://github.com/ThomWilliams/employee-tracker-tew/issues)
+- Issue tracker: [GitHub Issues](https://github.com/ThomWilliams/orm-back-end-ecommerce-tew/issues)
 
 
 ## License
